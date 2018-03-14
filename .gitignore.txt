@@ -1,0 +1,8 @@
+/*
+/*/
+!/classes/
+!/src/
+!/Premise
+!/CMakeLists
+!/ProgressLog
+!/res/
