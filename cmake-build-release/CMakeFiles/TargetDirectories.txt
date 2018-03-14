@@ -1,3 +1,0 @@
-C:/Users/Raster/CLionProjects/ProjectX/cmake-build-release/CMakeFiles/ProjectX.dir
-C:/Users/Raster/CLionProjects/ProjectX/cmake-build-release/CMakeFiles/edit_cache.dir
-C:/Users/Raster/CLionProjects/ProjectX/cmake-build-release/CMakeFiles/rebuild_cache.dir

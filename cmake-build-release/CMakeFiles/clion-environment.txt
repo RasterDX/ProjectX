@@ -1,4 +1,0 @@
-ToolSet: w64 3.4@C:\MinGW483
-Options: 
-
-Options:

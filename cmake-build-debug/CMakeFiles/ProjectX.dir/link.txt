@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2017.3\bin\cmake\bin\cmake.exe" -E remove -f CMakeFiles\ProjectX.dir/objects.a
-E:\CPP\Compilers\mingw64\bin\ar.exe cr CMakeFiles\ProjectX.dir/objects.a @CMakeFiles\ProjectX.dir\objects1.rsp
-E:\CPP\Compilers\mingw64\bin\g++.exe  -std=c++11 -lmingw32 -mwindows -g  -static-libgcc -static-libstdc++ -Wl,--whole-archive CMakeFiles\ProjectX.dir/objects.a -Wl,--no-whole-archive  -o ProjectX.exe -Wl,--out-implib,libProjectX.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ProjectX.dir\linklibs.rsp
