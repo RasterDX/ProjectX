@@ -10,6 +10,10 @@
 
 #include <SDL2/SDL_image.h>
 
+/*  Graphics class
+ *  Holds information dealing with graphics for the game.
+ */
+
 struct SDL_Window;
 struct SDL_Renderer;
 

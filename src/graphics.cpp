@@ -7,10 +7,6 @@
 #include "../classes/graphics.h"
 #include "../classes/globals.h"
 
-/*  Graphics class
- *  Holds information dealing with graphics for the game.
- */
-
 Graphics::Graphics() {
     SDL_CreateWindowAndRenderer(globals::SCREEN_WIDTH, globals::SCREEN_HEIGHT, 0, &this->_window, &this->_renderer);
     SDL_SetWindowTitle(this->_window, "Project X");
@@ -36,7 +32,7 @@ void Graphics::flip() {
 }
 
 void Graphics::clear() {
-    SDL_RenderPresent(this->_renderer);
+    SDL_RenderClear(this->_renderer);
 }
 
 SDL_Renderer* Graphics::getRenderer() const{

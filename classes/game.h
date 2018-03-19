@@ -7,7 +7,7 @@
 
 
 #include "graphics.h"
-#include "sprite.h"
+#include "player.h"
 
 class Game {
 public:
@@ -17,7 +17,7 @@ public:
 private:
     void gameLoop();
     void update(float elapsedTime);
-    Sprite _player;
+    Player _player;
 };
 
 
