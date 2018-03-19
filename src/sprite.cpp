@@ -30,7 +30,7 @@ Sprite::~Sprite() {}
 void Sprite::draw(Graphics &graphics, int x, int y) {
     SDL_Rect destinationRectangle = {x, y, static_cast<int>(this->_sourceRect.w * globals::SPRITE_SCALE),
                                      static_cast<int>(this->_sourceRect.h * globals::SPRITE_SCALE)};
-    graphics.blitSurfacer(this->_spriteSheet, &this->_sourceRect, &destinationRectangle);
+    graphics.blitSurface(this->_spriteSheet, &this->_sourceRect, &destinationRectangle);
 }
 
 void Sprite::update() {}

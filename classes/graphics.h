@@ -36,7 +36,14 @@ public:
     /*  void blitSurface.
      *  Draws a texture to a certain part of the screen.
      */
-    void blitSurfacer(SDL_Texture* source, SDL_Rect* sourceRectangle, SDL_Rect* destinationRectangle);
+    void blitSurface(SDL_Texture *source, SDL_Rect *sourceRectangle, SDL_Rect *destinationRectangle);
+
+    /*
+     *  bligSurfaceL simply flips the sprite when rendering. THis is used for animated sprites so we don't have to
+     *  duplicate sprites or the entire sprite sheet and flip them.
+     */
+
+    void blitSurfaceL(SDL_Texture *texture, SDL_Rect *sourceRectangle, SDL_Rect *destinationRectangle);
 
     /* void flip
      * renders everything to the screen.
@@ -62,8 +69,7 @@ private:
     SDL_Window* _window;
     SDL_Renderer* _renderer;
 
-    std::map<std::string, SDL_Surface*>_spriteSheets;
-};
+    std::map<std::string, SDL_Surface*>_spriteSheets; };
 
 
 #endif //PROJECTX_GRAPHICS_H

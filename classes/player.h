@@ -7,6 +7,7 @@
 
 #include <c++/string>
 #include "animatedsprite.h"
+#include "globals.h"
 
 class Graphics;
 
@@ -17,9 +18,23 @@ public:
     void draw(Graphics &graphics);
     void update(float elapsedTime);
 
+    /*
+     *  Pretty self-explanatory what the functions below do.
+     */
+
+    //  Moves the player left by _dx.
+    void moveLeft();
+
+    //  Move the player right by _dx.
+    void moveRight();
+
+    //  Stop moving the player.
+    void stopMoving();
+
     virtual void animationDone(std::string currenAanimation);
     virtual void setupAnimation();
 private:
+    float _dx, _dy;
 };
 
 

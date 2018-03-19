@@ -40,12 +40,18 @@ public:
     void draw(Graphics &graphics, int x, int y);
 
     /*
-     *  Required function that sets up all animations for a sprite.
+     *  Flips the sprite (this function is here so we don't have to have two rows of sprites for each direction in the sprite-sheet.)
      */
+
+    virtual Direction getFacingDirection();
+
+    void toggleFlipHorizontal();
 protected:
+    Direction _facing;
     double _timeToUpdate;
     bool _currentAnimationOnce;
     std::string _currentAnimation;
+    SDL_RendererFlip _flipType = SDL_FLIP_NONE;
 
     /*
      *  Adds an animation to the map of animations of the sprite.
@@ -66,7 +72,6 @@ protected:
      *  Changes the visibility of the animated sprite.
      */
     void setVisible(bool visible);
-
     /*
      *  Happens when an animation ends.
      */

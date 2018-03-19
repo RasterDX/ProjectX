@@ -10,8 +10,8 @@
 #include <c++/stack>
 
 namespace globals{
-    const int SCREEN_WIDTH = 640;
-    const int SCREEN_HEIGHT = 480;
+    const int SCREEN_WIDTH = 1280;
+    const int SCREEN_HEIGHT = 720;
 
     const float SPRITE_SCALE = 2.0f;
 
@@ -20,6 +20,14 @@ namespace globals{
 
     extern std::stack<Scene> _sceneStack;
 }
+
+enum Direction{
+    LEFT,
+    RIGHT,
+    UP,
+    DOWN,
+    NEUTRAL
+};
 
 struct Vector2 {
     int x, y;

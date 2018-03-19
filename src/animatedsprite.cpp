@@ -80,8 +80,32 @@ void AnimatedSprite::draw(Graphics &graphics, int x, int y) {
         destinationRectangle.h = static_cast<int>(this->_sourceRect.h * globals::SPRITE_SCALE);
 
         SDL_Rect sourceRect = this->_animations[this->_currentAnimation][this->_frameIndex];
-        graphics.blitSurfacer(this->_spriteSheet, &sourceRect, &destinationRectangle);
+        if(this->_flipType == SDL_FLIP_NONE) {
+            graphics.blitSurface(this->_spriteSheet, &sourceRect, &destinationRectangle);
+        }
+        else {
+            graphics.blitSurfaceL(this->_spriteSheet, &sourceRect, &destinationRectangle);
+        }
     }
 }
 
 void AnimatedSprite::animationDone(std::string currentAnimation) {}
+
+void AnimatedSprite::toggleFlipHorizontal() {
+    if(getFacingDirection() == LEFT) {
+        _facing = RIGHT;
+    }
+    else if(getFacingDirection() == RIGHT) {
+        _facing = LEFT;
+    }
+    if(_flipType == SDL_FLIP_HORIZONTAL) {
+        _flipType = SDL_FLIP_NONE;
+    }
+    else if(_flipType == SDL_FLIP_NONE) {
+        _flipType = SDL_FLIP_HORIZONTAL;
+    }
+}
+
+Direction AnimatedSprite::getFacingDirection() {
+    return this->_facing;
+}

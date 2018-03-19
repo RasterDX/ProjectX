@@ -15,7 +15,7 @@
 
 namespace {
     const int FPS = 60;
-    const int MAX_FRAME_TIME = 5 * 100 / FPS;
+    const int MAX_FRAME_TIME = 5 * 1000 / FPS;
 }
 
 Game::Game() {
@@ -55,6 +55,24 @@ void Game::gameLoop() {
         }
         if(input.wasKeyPressed(SDL_SCANCODE_F12)) {
             return;
+        }
+
+        else if(input.isKeyHeld(SDL_SCANCODE_LEFT)) {
+            if(_player.getFacingDirection() == RIGHT) {
+                this->_player.toggleFlipHorizontal();
+            }
+            this->_player.moveLeft();
+        }
+
+        else if(input.isKeyHeld(SDL_SCANCODE_RIGHT)) {
+            if(_player.getFacingDirection() == LEFT) {
+                this->_player.toggleFlipHorizontal();
+            }
+            this->_player.moveRight();
+        }
+
+        if(!input.isKeyHeld(SDL_SCANCODE_LEFT) && !input.isKeyHeld(SDL_SCANCODE_RIGHT)) {
+            this->_player.stopMoving();
         }
 
         const int CURRENT_TIME_MS = SDL_GetTicks();
